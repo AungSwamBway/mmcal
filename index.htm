@@ -55,6 +55,7 @@ function SelectLang(L){
 	else if (L==2 || L=="Zawgyi" || L=="my-Z1" || L=="my-z1" || L=="Zawgyi-One") { l=2;}
     else if (L == 4 || L == "Tai" || L == "my-Tai" || L == "my-tai") { l = 4; }
     else if (L==5 || L=="Karen" || L=="my-Kar" || L=="my-kar") { l=5;}
+	else if (L==6 || L=="Pa'O" || L=="pao-Blk" || L=="pao-blk") { l=6;}
 	else {l=1;}
 	return l;
 }
@@ -122,6 +123,8 @@ function UI(){
 					">Tai </option> \
                  <option value='5'  "+((uis.Lang==5)?"selected":"")+
 					">S'Karen </option> \
+					<option value='6'  "+((uis.Lang==6)?"selected":"")+
+					">Pa'O </option> \
 			</select> </td>";
 	str+="</tr></tbody></table>";
 	//End of table for the controls
@@ -402,8 +405,13 @@ function ShowDay(js) {
 		str+="<p class='MCAstro DaFontSize'>"+x.T(M.my_name+" Year", uis.Lang)+"</p>"; //year name
 		str+="<p class='MCAstro DaFontSize'>"+x.T("Mahabote - "+M.mahabote+" Born", uis.Lang)+"</p>"; //mahabote
 		str+="<p class='MCAstro DaFontSize'>"+x.T(M.nakhat+" Nakhat", uis.Lang)+"</p>";
+		
+		if(uis.Lang == 6){
+		// Only for Pa'O
+		str += "<p class='MCAstro DaFontSize'>" + x.T("Naga Head " + " Facing" + M.nagahle, uis.Lang) + "<p/>";
+		}else{
         str += "<p class='MCAstro DaFontSize'>" + x.T("Naga Head " + M.nagahle + " Facing", uis.Lang) + "<p/>";
-
+		}
 		//Thingyan
 		if (M.m==4) {
 		str+="<p><a class='AnchorFootMC DaFontSize' href='https://yan9a.github.io/mmcal/html/Thingyan.htm'>"+

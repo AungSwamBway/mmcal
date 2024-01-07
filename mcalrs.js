@@ -22,6 +22,7 @@ function rmDisp() {
             rmcalLang == "my-z1") rLang = 2; // Zawgyi font
         else if (rmcalLang == "my-Tai" || rmcalLang == "my-tai") rLang = 4; //Tai language
         else if (rmcalLang == "my-Kar" || rmcalLang == "my-kar") rLang = 5; //Tai language
+		 else if (rmcalLang == "pao-Blk" || rmcalLang == "pao-blk") rLang = 6; //Pa'O language
 		grX=rSetLang(rLang);  //Initialize the selected language catalog
 		//--------------------------------------------------------------------
 		ormcal.style.textDecoration="none"; ormcal.href="https://yan9a.github.io/mmcal/";
@@ -242,7 +243,19 @@ function rSetLang(lang) //Internationalization---------------------------------
             '8': '၈', '9': '၉', ',': '၊', '.': '။'
         };
     }
-
+	else if(lang ==6){
+		return {'First Waso':'ပဝါႏဆိုႏ','Tagu':'ဒဲဉ်ဟား','Kason':'ဒဲဉ်ရုတ်ꩻ','Nayon':'ဒဲဉ်စေတ်ꩻ',
+	'Waso':'ဝါႏဆိုႏ','Wagaung':'ဝါႏခေါင်ႏ','Tawthalin':'တောႏလင်ꩻ',
+	'Thadingyut':'တင်ꩻကျွစ်','Tazaungmon':'တထိန်ႏ','Nadaw':'ဒဲဉ်စေင်','Pyatho':'ဒဲဉ်ကံ',
+	'Tabodwe':'ဒဲဉ်သံ','Tabaung':'ဒဲဉ်သီႏ',
+	'waxing':'လာဆန်ꩻ','waning':'လာလောင်း','full moon':'လာဗွေ','new moon':'လာမား',
+	'Sasana Year':'သာႏသနာႏနေင်ႏ','Myanmar Year':'ကောႏဇာႏသက္ကရာဇ်','Ku':'ဗာႏ','Late':'လဲဉ်း',
+	'Second':'ဒု','Sunday':'တနင်ꩻနွေႏ','Monday':'တနင်ꩻလာႏ','Tuesday':'အင်္ဂါႏ',
+	'Wednesday':'ဗုဒ္ဓဟူꩻ','Thursday':'ကျာႏသပတေꩻ','Friday':'သောကျာႏ','Saturday':'စနေႏ',
+	'Nay':'မွူးနီꩻ','Yat':'နီꩻ','Sabbath Eve':'လာဖစ်','Sabbath':'ဥပုသ်နီꩻ',
+	'0': '၀','1': '၁','2': '၂','3': '၃','4': '၄','5': '၅','6': '၆','7': '၇',
+	'8': '၈','9': '၉',',':'၊','.':'။'};
+	}
 	else {	//Catalog for Myanmar Unicode
 	return {'First Waso':'ပဝါဆို','Tagu':'တန်ခူး','Kason':'ကဆုန်','Nayon':'နယုန်',
 	'Waso':'ဝါဆို','Wagaung':'ဝါခေါင်','Tawthalin':'တော်သလင်း',
